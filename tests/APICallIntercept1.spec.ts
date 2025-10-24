@@ -1,22 +1,6 @@
 import {test, expect, request, APIRequestContext} from '@playwright/test';
-import  {APIUtils, Response} from './utils_ts/APIUtils';
+import  {APIUtils, Response, LoginPayload, order, CreateOrderPayload, FakePayloadOrders} from './utils_ts/APIUtils';
 
-interface LoginPayload{
-  userEmail: string,
-  userPassword: string
-}
-
-interface order{
-  country: string,
-  productOrderedId: string
-}
-interface CreateOrderPayload{
-orders: order[]
-}
-interface FakePayloadOrders{
-  data:any[],
-  message:string
-}
 const loginPayload:LoginPayload = {userEmail: "swathi.g12025@gmail.com", userPassword: "RahulShetty123$"};
 const createOrderPayload:CreateOrderPayload = {orders: [{country: "India", productOrderedId: "68a961719320a140fe1ca57c"}]};
 const fakePayloadOrders:FakePayloadOrders = {data:[], message:"No Orders"};
